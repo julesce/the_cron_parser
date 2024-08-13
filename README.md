@@ -21,7 +21,7 @@ Usage
 ---
 Pass the cron string as the first argument to the script:
 ```shell
-ruby the_cron_parser.rb "*/15 0 1,15 * 1-5 /usr/bin/find"
+$ ruby the_cron_parser.rb "*/15 0 1,15 * 1-5 /usr/bin/find"
 ```
 
 Development
@@ -31,7 +31,7 @@ Install the version of Ruby as specified in the `.ruby-version` file.
 Assuming you're on a completely fresh machine, you'll want to use some sort of Ruby version manager.
 `rbenv` is a great option, and you can find the installation instructions here: https://github.com/rbenv/rbenv?tab=readme-ov-file#installation
 
-Once `rbenv` is installed, you can then use it to install Ruby 3.3.4:
+Once `rbenv` is installed, you can then use it to install the desired version of Ruby. At the time of writing this is `3.3.4`:
 ```shell
 $ rbenv install 3.3.4
 ```
