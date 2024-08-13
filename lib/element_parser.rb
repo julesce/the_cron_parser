@@ -16,11 +16,6 @@ class ElementParser
   def call
     error_message = "### Warning: Unable to parse input"
 
-    has_comma = proc { |value| value.include?(",") }
-    has_step_values = proc { |value| value.include?("/") }
-    has_range = proc { |value| value.include?("-") }
-    is_integer = proc { |value| !!Integer(value) }
-
     case input
     when "*"
       render_all
@@ -42,6 +37,22 @@ class ElementParser
   private
 
   attr_reader :input, :lower_bound, :upper_bound
+
+  def has_comma
+    proc { |value| value.include?(",") }
+  end
+
+  def has_step_values
+    proc { |value| value.include?("/") }
+  end
+
+  def has_range
+    proc { |value| value.include?("-") }
+  end
+
+  def is_integer
+    proc { |value| !!Integer(value) }
+  end
 
   def render_integer
     Integer(input).clamp(lower_bound, upper_bound).to_s
