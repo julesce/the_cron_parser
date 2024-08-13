@@ -1,12 +1,18 @@
 class ElementParser
 
-  # TODO: Add basic comments on expected input
+  # Responsible for parsing an element of a cron string, and returning the relevant formatted output.
+  # The parameters are:
+  # <code>"input"</code>:: the element to parse, e.g. "*/15"
+  # <code>"lower_bound"</code>:: the lower bound value by which to constrain the output
+  # <code>"upper_bound"</code>:: the upper bound value by which to constrain the output
   def initialize(input, lower_bound:, upper_bound:)
     @input = input.strip
     @lower_bound = lower_bound
     @upper_bound = upper_bound
   end
 
+  # Parses the input string based on lower and upper bound values:
+  #   ElementParser.new("*/15", 0, 59).call #=> 0 15 30 45
   def call
     error_message = "### Warning: Unable to parse input"
 
