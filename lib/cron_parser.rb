@@ -51,6 +51,31 @@ class CronParser
     ].join("\n")
 
     puts full_result
+
+    # NOTE: An alternative, and less readable (imho) refactor could look roughly like this:
+    #     configs = [
+    #       {
+    #         index: 0,
+    #         lower: 0,
+    #         upper: 59,
+    #         title: "Minute"
+    #       },
+    #       {
+    #         index: 1,
+    #         lower: 0,
+    #         upper: 23,
+    #         title: "Hour"
+    #       },
+    #       ... etc ...
+    #     ]
+    #
+    #     full_result = []
+    #     configs.each do |config|
+    #       result = ElementParser.new(parts[config[:index]], lower_bound: config[:lower], upper_bound: config[:upper]).call
+    #       full_result << "#{heading(config[:title])}#{result}"
+    #     end
+    #
+    #     puts full_result.join("\n")
   end
 
   def minute_output
