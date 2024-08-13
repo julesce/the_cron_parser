@@ -1,10 +1,10 @@
 require 'rspec'
-require_relative '../the_cron_parser'
+require_relative '../lib/cron_parser'
 
-RSpec.describe TheCronParser do
+RSpec.describe CronParser do
   describe "#call" do
     let(:cron_string) { nil }
-    subject { TheCronParser.new(cron_string).call }
+    subject { CronParser.new(cron_string).call }
 
     context "when no input is provided" do
       it "outputs an error message" do

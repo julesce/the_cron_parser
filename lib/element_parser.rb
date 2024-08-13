@@ -1,4 +1,6 @@
 class ElementParser
+
+  # TODO: Add basic comments on expected input
   def initialize(input, lower_bound:, upper_bound:)
     @input = input.strip
     @lower_bound = lower_bound

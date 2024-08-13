@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../element_parser'
+require_relative '../lib/element_parser'
 
 RSpec.describe ElementParser do
   describe "#call" do
